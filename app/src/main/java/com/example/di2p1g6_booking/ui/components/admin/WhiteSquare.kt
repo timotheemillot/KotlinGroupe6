@@ -1,6 +1,5 @@
-package com.example.di2p1g6_booking.ui.components
+package com.example.di2p1g6_booking.ui.components.admin
 
-import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding

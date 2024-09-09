@@ -15,15 +15,14 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.di2p1g6_booking.R
-import com.example.di2p1g6_booking.ui.components.BasicButton
-import com.example.di2p1g6_booking.ui.components.BasicTextField
+import com.example.di2p1g6_booking.ui.components.admin.BasicButton
+import com.example.di2p1g6_booking.ui.components.admin.BasicTextField
 import com.example.di2p1g6_booking.ui.components.InitLogo
-import com.example.di2p1g6_booking.ui.components.WhiteSquare
+import com.example.di2p1g6_booking.ui.components.admin.WhiteSquare
 
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier) {

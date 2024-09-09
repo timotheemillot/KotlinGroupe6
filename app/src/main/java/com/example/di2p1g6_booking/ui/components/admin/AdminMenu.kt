@@ -1,4 +1,4 @@
-package com.example.di2p1g6_booking.ui.components
+package com.example.di2p1g6_booking.ui.components.admin
 
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
