@@ -4,7 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,6 +17,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -58,20 +61,27 @@ fun LoginCard(modifier: Modifier = Modifier) {
             BasicTextField(label = "E-mail :")
             BasicTextField(label = "Mot de passe :")
 
-            Text(
-                text = "Mot de passe oublié ?",
-                color = Color.Blue,
-                modifier = Modifier.drawBehind {
-                    val strokeWidth = 1.dp.toPx()
-                    val y = size.height - strokeWidth / 2
-                    drawLine(
-                        color = Color.Blue,
-                        start = Offset(0f, y),
-                        end = Offset(size.width, y),
-                        strokeWidth = strokeWidth
-                    )},
-                fontSize = 10.sp,
-            )
+            Row (
+                modifier = Modifier.fillMaxWidth().padding( 16.dp, 0.dp),
+                horizontalArrangement = Arrangement.End
+
+            ) {
+                Text(
+                    text = "Mot de passe oublié ?",
+                    color = Color.Blue,
+                    modifier = Modifier.drawBehind {
+                        val strokeWidth = 1.dp.toPx()
+                        val y = size.height - strokeWidth / 2
+                        drawLine(
+                            color = Color.Blue,
+                            start = Offset(0f, y),
+                            end = Offset(size.width, y),
+                            strokeWidth = strokeWidth
+                        )},
+                    fontSize = 10.sp,
+                )
+            }
+
 
             BasicButton(label = "Valider", modifier = Modifier.padding(0.dp, 32.dp, 0.dp, 4.dp))
         }
