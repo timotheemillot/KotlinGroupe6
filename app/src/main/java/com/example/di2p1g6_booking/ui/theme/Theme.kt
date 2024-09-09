@@ -33,6 +33,8 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+
+
 @Composable
 fun DI2P1G6BookingTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

@@ -22,7 +22,9 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun BasicTextField(label : String, modifier: Modifier = Modifier) {
-    Column() {
+    Column(
+        modifier = modifier.padding(0.dp, 12.dp, 0.dp, 0.dp)
+    ) {
         Text(
             text = label,
             fontSize = 12.sp,
