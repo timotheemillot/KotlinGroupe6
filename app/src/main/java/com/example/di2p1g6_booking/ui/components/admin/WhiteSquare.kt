@@ -16,15 +16,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun WhiteSquare(title: String? = null,content: @Composable () -> Unit){
+fun WhiteSquare(title: String? = null, modifier: Modifier = Modifier, content: @Composable () -> Unit){
     Card(
         modifier = Modifier.shadow(4.dp)
     ){
         Column(
-            modifier = Modifier
+            modifier = modifier.then(Modifier
                 .background(Color.White, MaterialTheme.shapes.medium)
-                .padding(24.dp, 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+                .padding(24.dp, 16.dp)),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = androidx.compose.foundation.layout.Arrangement.Center
         ){
             if(title != null)
             {
