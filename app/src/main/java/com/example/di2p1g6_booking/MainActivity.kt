@@ -12,6 +12,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.di2p1g6_booking.ui.screens.admin.Site.ListeSiteScreen
 import com.example.di2p1g6_booking.ui.theme.DI2P1G6BookingTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,40 +21,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DI2P1G6BookingTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                    InputText(
-                        modifier = Modifier.padding(innerPadding),
-                    )
+                Scaffold(modifier = Modifier.fillMaxSize()) {
+                    ListeSiteScreen()
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DI2P1G6BookingTheme {
-        Greeting("Android")
-    }
-}
-
-@Composable
-fun InputText(modifier: Modifier = Modifier) {
-    Text(
-        text = "Hey there!",
-        modifier = modifier
-    )
-}

@@ -1,6 +1,10 @@
 package com.example.di2p1g6_booking.ui.components.admin
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.hoverable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,13 +13,21 @@ import androidx.compose.foundation.shape.GenericShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.input.pointer.PointerEventType
+import androidx.compose.ui.input.pointer.pointerHoverIcon
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun BasicTable(array: Array<String>) {
@@ -24,6 +36,7 @@ fun BasicTable(array: Array<String>) {
             .border(1.dp, color = androidx.compose.ui.graphics.Color.Black, shape = RoundedCornerShape(8.dp))
     ) {
         for (i in array) {
+            val interactionSource = remember { MutableInteractionSource() }
             Row(
                 modifier = Modifier.border(0.dp, Color.Black, shape = getBottomLineShape(1.dp))
                     .fillMaxWidth()
@@ -31,7 +44,8 @@ fun BasicTable(array: Array<String>) {
             ) {
                 Text(
                     text = i,
-                    modifier = Modifier.padding(4.dp, 8.dp, 0.dp, 8.dp)
+                    modifier = Modifier.padding(8.dp, 12.dp, 0.dp, 12.dp),
+                    fontSize = 20.sp
 
                 )
             }
