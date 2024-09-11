@@ -62,6 +62,16 @@ dependencies {
     implementation(libs.compose.icons)
 
 
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.compiler)
+    implementation(libs.squareup.retrofit.gson)
+    implementation(libs.squareup.retrofit.runtime)
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
+
+
+
 
 
 

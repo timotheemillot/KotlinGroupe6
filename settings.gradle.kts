@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "DI2P1G6-Booking"
 include(":app")
- 
+include(":data")
+include(":domain")
+include(":features")
