@@ -18,13 +18,13 @@ fun BasicButton(label : String,
                 modifier: Modifier = Modifier,
                 onClick: () -> Unit = {}) {
     Button(
-        onClick = { /* Do something! */ },
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             Color(0xFFFF6060),
             Color(0xFFFF6060)
         ),
         shape = MaterialTheme.shapes.medium,
-        modifier = modifier.then(Modifier.width(120.dp))
+        modifier = modifier.then(Modifier.width(120.dp)),
 
     ) {
         Text(

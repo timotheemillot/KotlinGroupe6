@@ -2,9 +2,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.People
-import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.di2p1g6_booking.R
@@ -69,7 +67,7 @@ fun SpaceCard(space: Space) {
             ) {
                 Text(space.name, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(IimageVector = FeatherIcons.Calendar, contentDescription = "Capacité", tint = Color.Gray)
+                    Icon(imageVector = FeatherIcons.Calendar, contentDescription = "Capacité", tint = Color.Gray)
                     Text("${space.capacity} personnes", fontSize = 14.sp)
                     Spacer(Modifier.width(16.dp))
                     Icon(imageVector = FeatherIcons.Calendar, contentDescription = "Heure", tint = Color.Gray)
@@ -80,7 +78,7 @@ fun SpaceCard(space: Space) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PreviewSearchResultScreen() {
     val sampleSpaces = listOf(

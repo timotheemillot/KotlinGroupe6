@@ -28,7 +28,7 @@ import com.example.di2p1g6_booking.ui.components.InitLogo
 import com.example.di2p1g6_booking.ui.components.admin.WhiteSquare
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(modifier: Modifier = Modifier, navController: androidx.navigation.NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -47,59 +47,48 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             verticalArrangement = Arrangement.Center
         ) {
             InitLogo(130)
-            LoginCard()
+            WhiteSquare(title = "Connexion") {
+
+                BasicTextField(label = "E-mail :")
+                BasicTextField(label = "Mot de passe :")
+
+                Row (
+                    modifier = Modifier.fillMaxWidth().padding( 16.dp, 0.dp),
+                    horizontalArrangement = Arrangement.End
+
+                ) {
+                    Text(
+                        text = "Mot de passe oublié ?",
+                        color = Color.Blue,
+                        modifier = Modifier.drawBehind {
+                            val strokeWidth = 1.dp.toPx()
+                            val y = size.height - strokeWidth / 2
+                            drawLine(
+                                color = Color.Blue,
+                                start = Offset(0f, y),
+                                end = Offset(size.width, y),
+                                strokeWidth = strokeWidth
+                            )},
+                        fontSize = 10.sp,
+                    )
+                }
+
+
+                BasicButton(label = "Valider",
+                    modifier = Modifier.padding(0.dp, 32.dp, 0.dp, 4.dp),
+                    onClick = { navController.navigate("listeSites") }
+                )
+            }
         }
     }
 }
 
 
 
-@Composable
-fun LoginCard(modifier: Modifier = Modifier) {
-        WhiteSquare(title = "Connexion") {
-
-            BasicTextField(label = "E-mail :")
-            BasicTextField(label = "Mot de passe :")
-
-            Row (
-                modifier = Modifier.fillMaxWidth().padding( 16.dp, 0.dp),
-                horizontalArrangement = Arrangement.End
-
-            ) {
-                Text(
-                    text = "Mot de passe oublié ?",
-                    color = Color.Blue,
-                    modifier = Modifier.drawBehind {
-                        val strokeWidth = 1.dp.toPx()
-                        val y = size.height - strokeWidth / 2
-                        drawLine(
-                            color = Color.Blue,
-                            start = Offset(0f, y),
-                            end = Offset(size.width, y),
-                            strokeWidth = strokeWidth
-                        )},
-                    fontSize = 10.sp,
-                )
-            }
-
-
-            BasicButton(label = "Valider", modifier = Modifier.padding(0.dp, 32.dp, 0.dp, 4.dp))
-        }
-
-
-    }
 
 
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen()
-}
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun LoginCardPreview() {
-    LoginCard()
+    LoginScreen(navController = androidx.navigation.compose.rememberNavController())
 }

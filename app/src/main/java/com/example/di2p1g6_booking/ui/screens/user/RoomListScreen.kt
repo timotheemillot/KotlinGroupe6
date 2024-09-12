@@ -43,7 +43,7 @@ fun Header() {
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Image(
-                painter = painterResource(id = R.drawable.profilimg),
+                painter = painterResource(id = R.drawable.profile_img),
                 contentDescription = "Profil image",
                 modifier = Modifier.size(80.dp)
             )

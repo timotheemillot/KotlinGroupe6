@@ -24,6 +24,9 @@ data class RessourceDto(
     @SerializedName("capacite")
     val capacite : Int,
 
+    @SerializedName("image")
+    val image : String,
+
     @SerializedName("siteId")
     val siteId : Int,
 

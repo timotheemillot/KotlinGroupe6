@@ -2,10 +2,11 @@ package com.example.data
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
+import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val RMAPI_URL = "https://rickandmortyapi.com/api/"
+private const val RMAPI_URL = "https://localhost:7026/ressources/api/"
 
 private fun provideHttpClient(): OkHttpClient = OkHttpClient()
 
